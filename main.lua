@@ -7,14 +7,14 @@
 -- Your code here
 local tapCount = 0
 
-local background = display.newImageRect( "background.png", 700,1075)
+local background = display.newImageRect( "background.jpg", 700,1075)
 background.x = display.contentCenterX
 background.y = display.contentCenterY
 
 local tapText = display.newText( tapCount, display.contentCenterX, 20, native.systemFont, 40 )
 tapText:setFillColor( 0, 0, 0 )
 
-local platform = display.newImageRect( "panel.png", 400, 50 )
+local platform = display.newImageRect( "panel.png", 300, 50 )
 platform.x = display.contentCenterX
 platform.y = display.contentHeight-25
 
