@@ -30,26 +30,31 @@ physics.start()
 physics.addBody( platform, "static" )
 physics.addBody( balloon, "dynamic", { radius=50, bounce=0.3 } )
 
+local myButtonEvent = function (event )
+    if (event.phase == "ended") then
+        tapCount = 0
+        tapText.text = tapCount
+    end
+end
+
 local myButton=widget.newButton{
-        --The id can be used to tell you what button was pressed in your button event
-	id = "myTextButton",
-        --This is the text label to put on the button
-	label = "Reset",
-        --This is the start x coordinate of the Top Left Corner
-	left=150,
-        --This is the start y coordinate of the Top Left Corner
-	top=150,
-        --Emboss can be true or false, tells it to make the label look embossed/inset
-	emboss=true,
-        --The border around the outside of the button
-	strokeWidth=4,
-        --How round to make the corners
-	cornerRadius=8,
-	--this tells it what function to call when you press the button
-        onEvent = myButtonEvent
+    --The id can be used to tell you what button was pressed in your    button event
+    id = "myTextButton",
+    --This is the text label to put on the button
+    label = "Reset",
+    --This is the start x coordinate of the Top Left Corner
+    left = 150,
+    --This is the start y coordinate of the Top Left Corner
+    top = 150,
+    --Emboss can be true or false, tells it to make the label look embossed/inset
+    emboss = true,
+    --The border around the outside of the button
+    strokeWidth = 4,
+    --How round to make the corners
+    cornerRadius = 8,
+    --this tells it what function to call when you press the button
+    onEvent = myButtonEvent
 }
-
-
 local function pushBalloon()
   balloon:applyLinearImpulse( 0, -0.75, balloon.x, balloon.y )
   tapCount = tapCount + 1
@@ -57,12 +62,4 @@ local function pushBalloon()
  
 end
 
-local myButtonEvent = function (event )
-    if (event.phase == "release") then
-        tapCount = 0
-        tapText.text = tapCount
-    end
-end
-
 balloon:addEventListener( "tap", pushBalloon )
-
