@@ -57,5 +57,12 @@ local function pushBalloon()
  
 end
 
+local myButtonEvent = function (event )
+    if (event.phase == "release") then
+        tapCount = 0
+        tapText.text = tapCount
+    end
+end
+
 balloon:addEventListener( "tap", pushBalloon )
 
