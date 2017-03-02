@@ -7,6 +7,7 @@
 -- Your code here
 local tapCount = 0
 local widget = require "widget"
+local notifications = require( "plugin.notifications" )
 
 local background = display.newImageRect( "background.jpg", 700,1075)
 background.x = display.contentCenterX
@@ -60,6 +61,35 @@ local function pushBalloon()
   tapCount = tapCount + 1
     tapText.text = tapCount
  
+end
+
+ 
+-- Get the app's launch arguments in case it was started when the user tapped on a notification
+local launchArgs = ...
+ 
+-- Set up notification options
+local options = {
+    alert = "Wake up!",
+    badge = 2,
+    sound = "alarm.caf",
+    custom = { foo = "bar" }
+}
+ 
+-- Schedule a notification to occur 60 seconds from now
+local notification1 = notifications.scheduleNotification( 5, options )
+  
+ 
+-- Listen for notifications
+local onNotification = function( event )
+    print( event.name )
+    if ( event.phase == "ended" ) then
+        print( event.custom.foo )
+    end
+end
+Runtime:addEventListener( "notification", onNotification )
+ 
+if ( launchArgs and launchArgs.notification ) then
+    onNotification( launchArgs.notification )
 end
 
 balloon:addEventListener( "tap", pushBalloon )

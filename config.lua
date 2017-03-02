@@ -11,6 +11,8 @@ application =
 		height = 480, 
 		scale = "letterBox",
 		fps = 30,
+    xAlign = "center",
+    yAlign = "center"
 		
 		--[[
 		imageSuffix =
@@ -20,4 +22,12 @@ application =
 		},
 		--]]
 	},
+  
+  notification = 
+    {
+        google =
+        {
+            projectNumber = "3982849975315"
+        },
+    }
 }
