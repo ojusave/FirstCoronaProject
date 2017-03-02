@@ -69,7 +69,7 @@ local launchArgs = ...
  
 -- Set up notification options
 local options = {
-    alert = "Wake up!",
+    alert = "Hello From Neura",
     badge = 2,
     sound = "alarm.caf",
     custom = { foo = "bar" }
