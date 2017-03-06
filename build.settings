@@ -54,9 +54,15 @@ settings =
 			},
 		},
 	},
+
   
   plugins =
     {
+        ["plugin.OneSignal"] =
+        {
+            publisherId = "com.onesignal",
+        },
+        
         ["plugin.notifications"] =
         {
             publisherId = "com.coronalabs"
@@ -85,4 +91,4 @@ settings =
             ".permission.C2D_MESSAGE",
         },
 	},
-}
+	}

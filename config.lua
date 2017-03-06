@@ -27,7 +27,7 @@ application =
     {
         google =
         {
-            projectNumber = "3982849975315"
+            projectNumber = "AIzaSyA6eqGsjh77XOhvrRjQuFzrcQluDkIdYPs"
         },
     }
 }
