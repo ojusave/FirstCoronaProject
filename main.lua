@@ -49,7 +49,7 @@ end
 local OneSignal = require("plugin.OneSignal")
 -- Uncomment SetLogLevel to debug issues.
 -- OneSignal.SetLogLevel(4, 4)
-OneSignal.Init("270991411204", DidReceiveRemoteNotification)
+OneSignal.Init("71806523-d284-4f93-882e-9a246e9f3279", "270991411204", DidReceiveRemoteNotification)
 
 local myButtonEvent = function (event )
     if (event.phase == "ended") then
